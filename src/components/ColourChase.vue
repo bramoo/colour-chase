@@ -64,7 +64,7 @@ export default {
         { name: 'yellow', dead: false },
         { name: 'green', dead: false },
         { name: 'brown', dead: false },
-        { name: 'blue', dead: true },
+        { name: 'blue', dead: false },
         { name: 'pink', dead: false },
         { name: 'black', dead: false }
       ],
@@ -118,16 +118,11 @@ p {
 }
 
 .colours {
+  max-width: 50em;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.pcolour {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
 }
 
 .yellow {
@@ -173,6 +168,15 @@ p {
   vertical-align: middle;
 }
 
+.pcolour {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
 .dead {
   opacity: 0.3;
 }
@@ -182,9 +186,11 @@ p {
     height: 40px;
     padding: 5px;
     margin: 5px;
+    line-height: 40px;
     font-size: 2rem;
     font-weight: bolder;
     vertical-align: middle;
+    cursor: pointer;
 }
 
 input {
@@ -193,8 +199,9 @@ input {
     border: none;
     padding: 5px 10px;
     margin: 5px;
-    line-height: 20px;
+    line-height: 40px;
     width: 150px;
+    vertical-align: middle;
 }
 
 input:focus {
