@@ -151,8 +151,8 @@ p {
 }
 
 .black {
-  fill: black;
-  background-color: black;
+  fill: #222222;
+  background-color: #222222;
 }
 
 .hide-colour {
