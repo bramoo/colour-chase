@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg18446"
+   version="1.1"
+   viewBox="0 0 36.002998 46.444"
+   height="46.444mm"
+   width="36.002998mm">
+  <defs
+     id="defs18440">
+    <filter
+       y="0"
+       width="1"
+       height="1.29"
+       x="0"
+       id="filter4818"
+       style="color-interpolation-filters:sRGB">
+      <feFlood
+         id="feFlood4808"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.77000000000000002" />
+      <feComposite
+         id="feComposite4810"
+         result="composite1"
+         operator="out"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur4812"
+         result="blur"
+         stdDeviation="4.0700000000000003"
+         in="composite1" />
+      <feOffset
+         id="feOffset4814"
+         result="offset"
+         dy="-5"
+         dx="0" />
+      <feComposite
+         id="feComposite4816"
+         result="composite2"
+         operator="atop"
+         in2="SourceGraphic"
+         in="offset" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata18443">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-250.556)"
+     id="layer1">
+    <circle
+       style="fill:#be0000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter4818)"
+       r="18.001675"
+       cy="268.55734"
+       cx="18.001675"
+       id="path3710" />
+    <path
+       id="path4647"
+       d="m 19.35851,259.94412 c -0.0945,-3.33092 -0.28351,-5.36254 -3.30729,-7.77214 1.19525,-0.17615 2.18824,-0.15003 3.13381,-0.0765 2.06131,1.27553 2.66938,3.97598 2.70119,7.87221 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path4647-4"
+       d="m 14.77555,260.61293 c -0.85045,-2.55134 -3.33094,-5.38616 -4.51209,-6.30748 0.8789,-0.61474 1.70279,-1.00944 2.5196,-1.37579 1.99044,1.48814 3.35446,3.22002 4.30759,6.90364 -0.61163,0.30561 -1.26907,0.59813 -2.3151,0.77963 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

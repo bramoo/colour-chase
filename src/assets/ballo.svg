@@ -1,0 +1,16 @@
+<svg width="36mm" height="46.44mm" version="1.1" viewBox="0 0 36 46.44" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="a" x="0" y="0" width="1" height="1.29" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(0,0,0)" flood-opacity=".77" result="flood"/>
+   <feComposite in="flood" in2="SourceGraphic" operator="out" result="composite1"/>
+   <feGaussianBlur in="composite1" result="blur" stdDeviation="4.0700000000000003"/>
+   <feOffset dx="0" dy="-5" result="offset"/>
+   <feComposite in="offset" in2="SourceGraphic" operator="atop" result="composite2"/>
+  </filter>
+ </defs>
+ <g transform="translate(0 -250.6)">
+  <circle cx="18" cy="268.6" r="18" fill="#be0000" filter="url(#a)"/>
+  <path d="m19.36 259.9c-0.0945-3.331-0.2835-5.363-3.307-7.772 1.195-0.1762 2.188-0.15 3.134-0.0765 2.061 1.276 2.669 3.976 2.701 7.872z" fill="#fff"/>
+  <path d="m14.78 260.6c-0.8504-2.551-3.331-5.386-4.512-6.307 0.8789-0.6147 1.703-1.009 2.52-1.376 1.99 1.488 3.354 3.22 4.308 6.904-0.6116 0.3056-1.269 0.5981-2.315 0.7796z" fill="#fff"/>
+ </g>
+</svg>
