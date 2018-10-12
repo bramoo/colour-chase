@@ -37,7 +37,7 @@
               class="remove"
               v-on:click="players.splice(players.indexOf(player), 1)">×</p>
 
-            <input v-model="player.name" />
+            <input v-model="player.name" v-on:blur="storePlayers()" />
 
             <div
               v-if="player.colour"
@@ -73,6 +73,11 @@ export default {
     }
   },
 
+  created: function () {
+    this.players = JSON.parse(localStorage.getItem('players'))
+    console.log('Loaded: ', this.players)
+  },
+
   methods: {
     addPlayer () {
       var id = Math.max.apply(Math, this.players.map(player => player.id)) + 1
@@ -80,6 +85,10 @@ export default {
       if (id < 0) id = 1
 
       this.players.push({ id: id, name: 'player' + id })
+    },
+
+    storePlayers () {
+      localStorage.setItem('players', JSON.stringify(this.players))
     },
 
     toggleColour (colour) {
