@@ -88,7 +88,8 @@ export default {
     },
 
     storePlayers () {
-      localStorage.setItem('players', JSON.stringify(this.players))
+      let scrubbedPlayers = this.players.map(player => ({id: player.id, name: player.name}))
+      localStorage.setItem('players', JSON.stringify(scrubbedPlayers))
     },
 
     toggleColour (colour) {
