@@ -35,7 +35,7 @@
           <div v-for="player in players" v-bind:key="player.id">
             <p
               class="remove"
-              v-on:click="players.splice(players.indexOf(player), 1)">×</p>
+              v-on:click="players.splice(players.indexOf(player), 1); storePlayers()">×</p>
 
             <input v-model="player.name" v-on:blur="storePlayers()" />
 
@@ -53,73 +53,83 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import Vue from "vue";
 
 export default {
-  name: 'ColourChase',
+  name: "ColourChase",
 
-  data () {
+  data() {
     return {
       colours: [
-        { name: 'yellow', dead: false },
-        { name: 'green', dead: false },
-        { name: 'brown', dead: false },
-        { name: 'blue', dead: false },
-        { name: 'pink', dead: false },
-        { name: 'black', dead: false }
+        { name: "yellow", dead: false },
+        { name: "green", dead: false },
+        { name: "brown", dead: false },
+        { name: "blue", dead: false },
+        { name: "pink", dead: false },
+        { name: "black", dead: false }
       ],
 
       players: []
-    }
+    };
   },
 
-  created: function () {
-    this.players = JSON.parse(localStorage.getItem('players'))
-    console.log('Loaded: ', this.players)
+  created: function() {
+    this.players = JSON.parse(localStorage.getItem("players"));
+    console.log("Loaded: ", this.players);
   },
 
   methods: {
-    addPlayer () {
-      var id = Math.max.apply(Math, this.players.map(player => player.id)) + 1
+    addPlayer() {
+      var id = -1;
 
-      if (id < 0) id = 1
+      if (this.players) {
+        id = Math.max.apply(Math, this.players.map(player => player.id)) + 1;
+      }
+      else{
+        this.players = [];
+      }
 
-      this.players.push({ id: id, name: 'player' + id })
+      if (id < 0) id = 1;
+
+      this.players.push({ id: id, name: "player" + id });
     },
 
-    storePlayers () {
-      let scrubbedPlayers = this.players.map(player => ({id: player.id, name: player.name}))
-      localStorage.setItem('players', JSON.stringify(scrubbedPlayers))
+    storePlayers() {
+      let scrubbedPlayers = this.players.map(player => ({
+        id: player.id,
+        name: player.name
+      }));
+      localStorage.setItem("players", JSON.stringify(scrubbedPlayers));
     },
 
-    toggleColour (colour) {
-      colour.dead = !colour.dead
+    toggleColour(colour) {
+      colour.dead = !colour.dead;
 
-      var p = this.players.filter(player => player.colour === colour)
+      var p = this.players.filter(player => player.colour === colour);
 
       for (let player of p) {
-        player.colour = null
+        player.colour = null;
       }
     },
 
-    getColour (player) {
-      var undead = this.colours.filter(colour => !colour.dead)
+    getColour(player) {
+      var undead = this.colours.filter(colour => !colour.dead);
       var unclaimed = undead.filter(
         colour => !this.players.some(player => player.colour === colour)
-      )
+      );
 
       if (unclaimed.length > 0) {
-        var colour = unclaimed[Math.floor(Math.random() * unclaimed.length)]
-        Vue.set(player, 'colour', colour)
-        Vue.set(player, 'visible', true)
+        var colour = unclaimed[Math.floor(Math.random() * unclaimed.length)];
+        Vue.set(player, "colour", colour);
+        Vue.set(player, "visible", true);
       }
     },
 
-    toggleVisible (player) {
-      Vue.set(player, 'visible', !player.visible)
+    toggleVisible(player) {
+      Vue.set(player, "visible", !player.visible);
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -166,7 +176,7 @@ p {
 }
 
 .hide-colour {
-    background-color: grey;
+  background-color: grey;
 }
 
 .colour {
@@ -191,34 +201,36 @@ p {
   opacity: 0.3;
 }
 
-.add, .remove, .get {
-    display: inline-block;
-    height: 40px;
-    padding: 5px;
-    margin: 5px;
-    line-height: 40px;
-    font-size: 2rem;
-    font-weight: bolder;
-    vertical-align: middle;
-    cursor: pointer;
+.add,
+.remove,
+.get {
+  display: inline-block;
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+  line-height: 40px;
+  font-size: 2rem;
+  font-weight: bolder;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 input {
-    height: 40px;
-    font-size: 1.5rem;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px;
-    line-height: 40px;
-    width: 150px;
-    vertical-align: middle;
+  height: 40px;
+  font-size: 1.5rem;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  line-height: 40px;
+  width: 150px;
+  vertical-align: middle;
 }
 
 input:focus {
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid blue;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid blue;
 }
 </style>
